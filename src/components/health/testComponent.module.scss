@@ -5,27 +5,59 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 30px 0;
+  padding: 60px 20px 30px;
 
-  .resBMIIcon {
+  svg {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 25px;
+    right: 10px;
     width: 50px;
     height: 50px;
   }
 
   .number {
     margin-bottom: 10px;
-    font-size: x-large;
+    font-size: 30px;
     font-weight: 600;
+    color: colors.$GRAY3;
   }
 
   .title {
-    margin-bottom: 10px;
+    margin-bottom: 18px;
     font-size: larger;
     font-weight: 500;
-    color: colors.$GREEN;
+
+    &.list1 {
+      color: colors.$GREEN;
+    }
+
+    &.list2 {
+      color: colors.$PURPLE;
+    }
+
+    &.list3 {
+      color: colors.$BLUE;
+    }
+
+    &.list4 {
+      color: colors.$LIGHTBLUE;
+    }
+
+    &.list5 {
+      color: colors.$PURPLE;
+    }
+
+    &.list6 {
+      color: colors.$ORANGE;
+    }
+
+    &.list7 {
+      color: colors.$CRIMSON;
+    }
+
+    &.list8 {
+      color: colors.$TURQUOISE;
+    }
   }
 
   .intro {
@@ -46,28 +78,69 @@
     margin-bottom: 2rem;
 
     .tag {
-      padding: 5px 10px;
-      margin-right: 10px;
+      padding: 8px 9px;
+      margin-right: 8px;
+      font-size: 14px;
+      color: colors.$GRAY6;
       word-break: break-all;
       background-color: #eeeeee;
       border-radius: 15px;
     }
 
     .tag:first-child {
-      background-color: pink;
+      background-color: colors.$PINK;
     }
+  }
+
+  hr {
+    border: 1px solid colors.$MAIN;
+    border-radius: 5px;
   }
 
   .subTitle {
     margin: 15px 0;
     color: colors.$GREEN;
+
+    &.list1 {
+      color: colors.$GREEN;
+    }
+
+    &.list2 {
+      color: colors.$PURPLE;
+    }
+
+    &.list3 {
+      color: colors.$BLUE;
+    }
+
+    &.list4 {
+      color: colors.$LIGHTBLUE;
+    }
+
+    &.list5 {
+      color: colors.$PURPLE;
+    }
+
+    &.list6 {
+      color: colors.$ORANGE;
+    }
+
+    &.list7 {
+      color: colors.$CRIMSON;
+    }
+
+    &.list8 {
+      color: colors.$TURQUOISE;
+    }
   }
 
   .textLists {
-    padding: 0 20px;
+    padding-left: 20px;
 
     .textLi {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      line-height: 22px;
+      color: colors.$GRAY3;
       list-style: outside;
     }
   }

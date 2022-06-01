@@ -2,13 +2,16 @@
 
 .layout {
   display: flex;
+  align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: colors.$GRAYD;
+  background-color: #dddddd;
 
   .main {
     width: 360px;
+    height: 78vh;
     overflow: scroll;
     background-color: white;
+    border-radius: 20px;
   }
 }

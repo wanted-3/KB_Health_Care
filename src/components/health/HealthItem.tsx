@@ -33,9 +33,11 @@ const HealthItem = () => {
   }, [test])
 
   return (
-    <div className={styles.qweqwe}>
-      <span>오케어와 함께 건강을 관리해보세요.</span>
-      <span>건강점수를 최대 {qweqwe.wMymaxHscore}점까지 올릴 수 있어요.</span>
+    <div className={styles.healthWrap}>
+      <h2>
+        오케어와 함께 건강을 관리해보세요. <br />
+        건강점수를 최대 <mark>{qweqwe.wMymaxHscore}점</mark>까지 올릴 수 있어요.
+      </h2>
 
       {component.map((item) => (
         <TestComponent key={item.id} icon={item.icon} id={item.id} {...item.props} />

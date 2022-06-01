@@ -1,4 +1,5 @@
 import styles from './testComponent.module.scss'
+import { cx } from 'styles'
 
 interface TestComponentProps {
   id: any
@@ -27,11 +28,13 @@ const TestComponent = ({
   tags,
   textList,
 }: TestComponentProps) => {
+  const strId = `list${id}`
+
   return (
     <div className={styles.tempWrapper}>
       {icon}
       <span className={styles.number}>0{id}</span>
-      <h1 className={styles.title}>{name}</h1>
+      <h1 className={cx(styles.title, styles[strId])}>{name}</h1>
 
       <p className={styles.intro}>{value ? `${firstText} ${value}${unit} 로 ${title} 입니다.` : text}</p>
 
@@ -47,7 +50,7 @@ const TestComponent = ({
 
       <hr className={styles.line} />
 
-      <h2 className={styles.subTitle}>이렇게 관리해 보세요!</h2>
+      <h2 className={cx(styles.subTitle, styles[strId])}>이렇게 관리해 보세요!</h2>
       <ul className={styles.textLists}>
         {textList.map((item: string) => (
           <li className={styles.textLi} key={`${item}-temp`}>
