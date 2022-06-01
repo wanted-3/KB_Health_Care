@@ -1,7 +1,7 @@
 import { VictoryChart, VictoryLine, VictoryTheme, VictoryAxis, VictoryVoronoiContainer, VictoryBar } from 'victory'
 
 interface ChartProps {
-  chartData: []
+  chartData: number[]
 }
 const Chart = ({ chartData }: ChartProps) => {
   const colors = ['#FFC000', '#BFBFBF']

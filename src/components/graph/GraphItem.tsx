@@ -7,6 +7,8 @@ import { getHealthPoint, getPredictPoint, getPrice, setHealthPoint, setPredictPo
 import Chart from './Graph'
 import GraphPredict from './GraphPredict'
 
+import PriceGraph from './PriceGraph'
+
 const GraphItem = () => {
   const dispatch = useDispatch()
   useMount(() => {
@@ -34,6 +36,7 @@ const GraphItem = () => {
       {' '}
       그래프
       <GraphPredict chartData={[wHscoreNum, wHscoreDyNum]} />
+      <PriceGraph data={third} />
     </div>
   )
 }
