@@ -1,0 +1,28 @@
+@use '/src/styles/constants/colors';
+
+.wrap {
+  padding: 30px;
+
+  p {
+    line-height: 20px;
+  }
+
+  mark {
+    color: colors.$GRAPH_ORANGE;
+    background: linear-gradient(to top, colors.$MAIN 50%, transparent 50%);
+  }
+
+  .contents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hscorePercent {
+    padding: 4px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(to top, #ffd301 60%, transparent 50%);
+  }
+}

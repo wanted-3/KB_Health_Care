@@ -8,6 +8,7 @@ import {
   VictoryTooltip,
   VictoryScatter,
   VictoryGroup,
+  VictoryLabel,
 } from 'victory'
 
 interface ChartProps {
@@ -17,7 +18,7 @@ const Chart = ({ chartData }: ChartProps) => {
   const colors = ['#FFC000', '#BFBFBF']
 
   return (
-    <VictoryChart theme={VictoryTheme.material} width={500} height={240} domainPadding={{ x: 150 }}>
+    <VictoryChart theme={VictoryTheme.material} width={650} height={320} domainPadding={{ x: 150 }}>
       <VictoryAxis
         scale='time'
         standalone={false}
@@ -25,28 +26,53 @@ const Chart = ({ chartData }: ChartProps) => {
           axis: { stroke: 'transparent' },
           ticks: { stroke: 'transparent' },
           grid: { stroke: 'transparent' },
-          tickLabels: { fontSize: 12, padding: 5, fill: '#94A2AD' },
+          tickLabels: { fontSize: 20, padding: 5, fill: '#94A2AD' },
         }}
+      />
+
+      <VictoryBar
+        scale={{ x: 'time', y: 'linear' }}
+        standalone={false}
+        style={{
+          data: { fill: ({ datum }) => (datum.x === '나' || datum.x === '2021' ? '#FFC000' : '#fe833d') },
+        }}
+        labelComponent={
+          <VictoryLabel
+            style={[
+              { fill: ({ datum }) => (datum.x === '나' || datum.x === '2021' ? '#fe833d' : '#666666'), fontSize: 25 },
+            ]}
+          />
+        }
+        data={chartData}
       />
       <VictoryGroup data={chartData} color={colors[1]}>
         <VictoryLine
           standalone={false}
           style={{
-            data: { stroke: '#4FADF7' },
+            data: { stroke: '#666666' },
             parent: { border: '1px solid #ccc' },
+            labels: {
+              fill: 'transparent',
+            },
           }}
           labelComponent={<VictoryTooltip renderInPortal={false} />}
-          data={chartData}
         />
-        <VictoryScatter size={3} symbol='circle' />
+        <VictoryScatter
+          size={3}
+          symbol='circle'
+          style={{
+            data: {
+              fill: ({ datum }) => (datum.x === '나' || datum.x === '2021' ? 'white' : '#FFC000'),
+              stroke: ({ datum }) => (datum.x === '나' || datum.x === '2021' ? '#666666' : '#FFC000'),
+              fillOpacity: 1,
+              strokeWidth: 1,
+            },
+            labels: {
+              fill: 'transparent',
+            },
+          }}
+        />
       </VictoryGroup>
-      <VictoryBar
-        scale={{ x: 'time', y: 'linear' }}
-        standalone={false}
-        labels={({ datum }) => `${datum.y}`}
-        style={{ data: { fill: ({ datum }) => (datum.x === '나' || datum.x === '2021' ? '#FFC000' : '#BFBFBF') } }}
-        data={chartData}
-      />
     </VictoryChart>
   )
 }
