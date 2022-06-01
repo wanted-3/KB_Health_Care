@@ -1,7 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
+import userInfo from './userInfo'
 
 export const store = configureStore({
-  reducer: {},
+  reducer: { userInfo },
   devTools: process.env.NODE_ENV !== 'production',
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
 })

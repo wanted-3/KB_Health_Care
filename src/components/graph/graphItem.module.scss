@@ -1,0 +1,18 @@
+@use 'styles/constants/colors';
+
+.healthAnalysisResult {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+
+  h1 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  button {
+    font-size: 12px;
+    color: colors.$GRAY3;
+    text-decoration: underline;
+  }
+}

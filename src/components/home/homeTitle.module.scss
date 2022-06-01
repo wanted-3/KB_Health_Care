@@ -1,0 +1,80 @@
+@use '/src/styles/constants/colors';
+
+.homeWrapper {
+  border: 1px solid red;
+
+  .homeTitle {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .healthScoreWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .healthScoreTitle {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+
+      h1 {
+        margin-right: 5px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .infoIcon {
+        width: 20px;
+      }
+    }
+
+    .healthScore {
+      width: 80%;
+      height: 150px;
+    }
+
+    p {
+      padding: 10px;
+      font-size: 12px;
+      color: colors.$GRAYA;
+    }
+
+    .healthResult {
+      margin-bottom: 10px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .userInfo {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      padding: 18px 15px;
+      margin-bottom: 25px;
+      color: colors.$GRAY6;
+      background-color: colors.$SECONDARY;
+      border-radius: 10px;
+
+      .userInfoDetail {
+        display: flex;
+
+        dd {
+          padding: 0 5px;
+
+          &::before {
+            padding-left: 10px;
+            content: '';
+            border-left: 1px solid colors.$GRAYA;
+          }
+        }
+      }
+
+      dt,
+      dd {
+        font-size: 14px;
+      }
+    }
+  }
+}
