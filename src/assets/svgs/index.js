@@ -1,2 +1,11 @@
 export { ReactComponent as LogoImage } from './logo.svg'
 export { ReactComponent as CheckIcon } from './check.svg'
+
+export { ReactComponent as resBloodPressureIcon } from './resBloodPressure.svg'
+export { ReactComponent as resBMIIcon } from './resBMI.svg'
+export { ReactComponent as drnkQtyIcon } from './drnkQty.svg'
+export { ReactComponent as resGFRIcon } from './resGFR.svg'
+export { ReactComponent as resTotalCholesterolIcon } from './resTotalCholesterol.svg'
+export { ReactComponent as smkQtyIcon } from './smkQty.svg'
+export { ReactComponent as resFastingBloodSugerIcon } from './resFastingBloodSugar.svg'
+export { ReactComponent as exerciQtyIcon } from './exerciQty.svg'
