@@ -1,20 +1,15 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Health from 'components/health'
-import Home from 'components/home'
-import Graph from 'components/graph'
+import Health from './Health'
 import Layout from 'components/layout'
+import Graph from './Graph'
+import Home from './Home'
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path='' element={<Home />} />
-          <Route element={<Health />} />
-          <Route element={<Graph />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Layout>
+      <Home />
+      <Graph />
+      <Health />
+    </Layout>
   )
 }
 

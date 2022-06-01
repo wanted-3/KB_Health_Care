@@ -1,9 +1,9 @@
 import styles from './layout.module.scss'
 
-const Layout = () => {
+const Layout = ({ children }: any) => {
   return (
     <div className={styles.layout}>
-      <main className={styles.main}>메인입니다</main>
+      <main className={styles.main}>{children}</main>
     </div>
   )
 }
