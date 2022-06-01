@@ -73,7 +73,7 @@ const systemSlice = createSlice({
       // state.value.resBMI.value = action.payload.wxcResultMap.wMymaxHscore
 
       const resBMIGroup = action.payload.wxcResultMap.boj.resBMI.split(' - ')
-      const resBloodPressureGroup = action.payload.wxcResultMap.boj.resBMI.split(' - ')
+      const resBloodPressureGroup = action.payload.wxcResultMap.boj.resBloodPressure.split(' - ')
       const resTotalCholesterolGroup = action.payload.wxcResultMap.boj.resTotalCholesterol.split(' - ')
       const smkQtyGroup = action.payload.wxcResultMap.boj.smkQty.split(' - ')
       const resFastingBloodSugerGroup = action.payload.wxcResultMap.boj.resFastingBloodSuger.split(' - ')
@@ -90,7 +90,7 @@ const systemSlice = createSlice({
       state.value.resGFR.title = resGFRGroup[0]
       state.value.exerciQty.title = exerciQtyGroup[0]
 
-      state.value.resBMI.textList = resGFRGroup.slice(1)
+      state.value.resBMI.textList = resBMIGroup.slice(1)
       state.value.resBloodPressure.textList = resBloodPressureGroup.slice(1)
       state.value.resTotalCholesterol.textList = resTotalCholesterolGroup.slice(1)
       state.value.smkQty.textList = smkQtyGroup.slice(1)

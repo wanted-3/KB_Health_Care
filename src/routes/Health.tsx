@@ -1,5 +1,6 @@
 import { useAppDispatch } from 'hooks/useAppDispatch'
 import HealthItem from 'components/health/HealthItem'
+import BloodPressure from 'components/health/BloodPressure'
 import { temp } from 'states/healthData'
 import { getDataApi } from 'services/getData'
 
@@ -13,6 +14,7 @@ const Health = () => {
   return (
     <div>
       <HealthItem />
+      <BloodPressure />
     </div>
   )
 }

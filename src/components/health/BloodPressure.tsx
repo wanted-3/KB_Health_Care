@@ -12,9 +12,9 @@ import {
   ResGFRIcon,
 } from 'assets/svgs'
 
-import styles from './healthItem.module.scss'
+import styles from './BloodPressure.module.scss'
 
-const HealthItem = () => {
+const BloodPressure = () => {
   const test = useAppSelector(getHealthData)
   console.log(test)
 
@@ -34,24 +34,28 @@ const HealthItem = () => {
   // }, [test])
 
   return (
-    <div>
-      <div className={styles.tempWrapper}>
-        {/* <ResBMIIcon /> */}
-        <h1 className={styles.title}>01. 체질량지수</h1>
-        <p>
-          현재 체질량 지수 {test.resBMI.value}이며 {test.resBMI.title}입니다.
-        </p>
-        <span>{test.resBMI.coverage}</span>
-        <h1>01. {test.resBMI.title}</h1>
-        <span className={styles.tag}>{test.resBMI.tag.tag1}</span>
-        <hr />
-        <h2 className={styles.subTitle}>이렇게 관리해 보세요!</h2>
-        <div>{test.resBMI.textList[0]}</div>
-        <div>{test.resBMI.textList[1]}</div>
-        {/* {temp1} */}
+    <div className={styles.itemWrapper}>
+      {/* <ResBMIIcon /> */}
+      <h1>01. 혈압</h1>
+      <p>
+        혈압은 {test.resBloodPressure.value} 이며 {test.resBloodPressure.title}입니다.
+      </p>
+      <span>{test.resBloodPressure.coverage}</span>
+
+      <div>
+        <span>{test.resBloodPressure.tag.tag1}</span>
+        <span>{test.resBloodPressure.tag.tag2}</span>
+        <span>{test.resBloodPressure.tag.tag3}</span>
       </div>
+      <br />
+      <h2>이렇게 관리해 보세요!</h2>
+      <ul>
+        {test.resBloodPressure.textList.map((item: any) => (
+          <li key={`textList_${item}`}>{item}</li>
+        ))}
+      </ul>
     </div>
   )
 }
 
-export default HealthItem
+export default BloodPressure

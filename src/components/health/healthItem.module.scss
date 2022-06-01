@@ -1,0 +1,18 @@
+.tempWrapper {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+  }
+
+  .tag {
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .subTitle {
+    margin: 15px 0;
+  }
+}
