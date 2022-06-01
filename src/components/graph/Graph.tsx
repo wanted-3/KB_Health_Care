@@ -44,6 +44,7 @@ const Chart = ({ chartData }: ChartProps) => {
           />
         }
         data={chartData}
+        animate={{ duration: 5000, onLoad: { duration: 500 } }}
       />
       <VictoryGroup data={chartData} color={colors[1]}>
         <VictoryLine
@@ -56,6 +57,7 @@ const Chart = ({ chartData }: ChartProps) => {
             },
           }}
           labelComponent={<VictoryTooltip renderInPortal={false} />}
+          animate={{ duration: 3000, onLoad: { duration: 500 } }}
         />
         <VictoryScatter
           size={3}

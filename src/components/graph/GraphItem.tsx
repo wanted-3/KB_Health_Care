@@ -9,6 +9,8 @@ import Predict10Year from './Predict10Year'
 import PriceGraph from './PriceGraph'
 import YearHealth from './YearHealth'
 
+import styles from './graphItem.module.scss'
+
 const GraphItem = () => {
   const dispatch = useDispatch()
   useMount(() => {
@@ -33,7 +35,7 @@ const GraphItem = () => {
 
   return (
     <div>
-      그래프
+      <h1 className={styles.title}>나의 건강점수 분석결과</h1>
       <YearHealth />
       <HealthPoint />
       <Predict10Year />

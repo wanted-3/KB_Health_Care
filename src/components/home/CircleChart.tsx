@@ -10,7 +10,7 @@ const CircleChart = ({ score }: Props) => {
       data={[
         {
           value: Number(score),
-          color: '#F6CB44',
+          color: '#fed303',
           name: 'score',
         },
       ]}
