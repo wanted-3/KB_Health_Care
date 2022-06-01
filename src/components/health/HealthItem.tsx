@@ -1,55 +1,45 @@
 import { useMemo } from 'react'
 import { useAppSelector } from 'hooks/useAppSelector'
-import { getHealthData } from 'states/healthData'
+import { getHealthData, getTestData } from 'states/healthData'
 import {
   ResBMIIcon,
   ResBloodPressureIcon,
   ResTotalCholesterolIcon,
   SmkQtyIcon,
-  ResFastingBloodSugerIcon,
+  ResFastingBloodSugarIcon,
   DrnkQtyIcon,
-  ExerciQtyIcon,
   ResGFRIcon,
+  ExerciQtyIcon,
 } from 'assets/svgs'
+import TestComponent from './TestComponent'
 
 import styles from './healthItem.module.scss'
 
 const HealthItem = () => {
   const test = useAppSelector(getHealthData)
-  console.log(test)
+  const qweqwe = useAppSelector(getTestData)
 
-  // const temp1 = useMemo(() => {
-  //   const abc: any = {
-  //     // resBMI: <ResBMIIcon />,
-  //     // resBloodPressure: <ResBloodPressureIcon />,
-  //     // resTotalCholesterol: <ResTotalCholesterolIcon />,
-  //     // smkQty: <SmkQtyIcon />,
-  //     // resFastingBlood: <ResFastingBloodSugerIcon />,
-  //     // drnkQtyIcon: <DrnkQtyIcon />,
-  //     // exerciQtyIcon: <ExerciQtyIcon />,
-  //     // resGFR: <ResGFRIcon />,
-  //   }
-
-  //   return abc[test.tag.tagId]
-  // }, [test])
+  const component = useMemo(() => {
+    return [
+      { id: 1, icon: <ResBMIIcon />, props: test.resBMI },
+      { id: 2, icon: <ResBloodPressureIcon />, props: test.resBloodPressure },
+      { id: 3, icon: <ResTotalCholesterolIcon />, props: test.resTotalCholesterol },
+      { id: 4, icon: <SmkQtyIcon />, props: test.smkQty },
+      { id: 5, icon: <ResFastingBloodSugarIcon />, props: test.resFastingBloodSuger },
+      { id: 6, icon: <DrnkQtyIcon />, props: test.drnkQty },
+      { id: 7, icon: <ResGFRIcon />, props: test.resGFR },
+      { id: 8, icon: <ExerciQtyIcon />, props: test.exerciQty },
+    ]
+  }, [test])
 
   return (
-    <div>
-      <div className={styles.tempWrapper}>
-        {/* <ResBMIIcon /> */}
-        <h1 className={styles.title}>01. 체질량지수</h1>
-        <p>
-          현재 체질량 지수 {test.resBMI.value}이며 {test.resBMI.title}입니다.
-        </p>
-        <span>{test.resBMI.coverage}</span>
-        <h1>01. {test.resBMI.title}</h1>
-        <span className={styles.tag}>{test.resBMI.tag.tag1}</span>
-        <hr />
-        <h2 className={styles.subTitle}>이렇게 관리해 보세요!</h2>
-        <div>{test.resBMI.textList[0]}</div>
-        <div>{test.resBMI.textList[1]}</div>
-        {/* {temp1} */}
-      </div>
+    <div className={styles.qweqwe}>
+      <span>오케어와 함께 건강을 관리해보세요.</span>
+      <span>건강점수를 최대 {qweqwe.wMymaxHscore}점까지 올릴 수 있어요.</span>
+
+      {component.map((item) => (
+        <TestComponent key={item.id} icon={item.icon} id={item.id} {...item.props} />
+      ))}
     </div>
   )
 }
