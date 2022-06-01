@@ -1,8 +1,11 @@
 import { AxiosResponse } from 'axios'
+
 import { useDispatch, useSelector } from 'react-redux'
 import { useMount } from 'react-use'
 import { getDataApi } from 'services/getData'
 import { getHealthPoint, getPredictPoint, getPrice, setHealthPoint, setPredictPoint, setPrice } from 'states/graph'
+import Chart from './Graph'
+import GraphPredict from './GraphPredict'
 
 const GraphItem = () => {
   const dispatch = useDispatch()
@@ -19,8 +22,20 @@ const GraphItem = () => {
   const first = useSelector(getHealthPoint)
   const second = useSelector(getPredictPoint)
   const third = useSelector(getPrice)
-  console.log(first, second, third)
-  return <div> 그래프</div>
+
+  // feat: joon 데이터 처리
+  const { wHscore, wHscoreDy } = second
+  const wHscoreDyArr = wHscoreDy.replace(/\[|\]/g, '').split(', ')
+  const wHscoreNum = Number(wHscore)
+  const wHscoreDyNum = Number(wHscoreDyArr[wHscoreDyArr.length - 1])
+
+  return (
+    <div>
+      {' '}
+      그래프
+      <GraphPredict chartData={[wHscoreNum, wHscoreDyNum]} />
+    </div>
+  )
 }
 
 export default GraphItem
