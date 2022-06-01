@@ -4,6 +4,8 @@ import { useMount } from 'react-use'
 import { getDataApi } from 'services/getData'
 import { getHealthPoint, getPredictPoint, getPrice, setHealthPoint, setPredictPoint, setPrice } from 'states/graph'
 
+import PriceGraph from './PriceGraph'
+
 const GraphItem = () => {
   const dispatch = useDispatch()
   useMount(() => {
@@ -19,8 +21,12 @@ const GraphItem = () => {
   const first = useSelector(getHealthPoint)
   const second = useSelector(getPredictPoint)
   const third = useSelector(getPrice)
-  console.log(first, second, third)
-  return <div> 그래프</div>
+
+  return (
+    <div>
+      <PriceGraph data={third} />
+    </div>
+  )
 }
 
 export default GraphItem
