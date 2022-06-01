@@ -66,7 +66,7 @@ interface HealthTagList {
   tag3: string
 }
 
-interface HealthScoreList {
+export interface IHealthScoreList {
   SCORE: string
   TYPE_CD: string
   SUBMIT_DATE: string
