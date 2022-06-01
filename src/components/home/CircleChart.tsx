@@ -20,6 +20,7 @@ const CircleChart = ({ score }: Props) => {
       lengthAngle={300}
       startAngle={-240}
       animate
+      animationDuration={2000}
       rounded
       label={({ dataEntry }) => dataEntry.value}
       labelStyle={{
