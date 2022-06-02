@@ -1,7 +1,7 @@
-import { useAppDispatch } from 'hooks/useAppDispatch'
-import { getDataApi } from 'services/getData'
-import { setHealthData } from 'states/healthData'
 import { setHealthPoint, setPredictPoint, setPrice, setYearPoint } from 'states/healthScoreData'
+import { useAppDispatch } from 'hooks/useAppDispatch'
+import { setHealthData } from 'states/healthData'
+import { getDataApi } from 'services/getData'
 import { setUserInfo } from 'states/userInfo'
 
 import HealthScoreChart from './HealthScoreChart'

@@ -1,6 +1,6 @@
 import { useAppSelector } from 'hooks/useAppSelector'
-import { IResults } from 'types/chartData'
 import { getPrice } from 'states/healthScoreData'
+import { IResults } from 'types/chartData'
 
 import styles from './chart.module.scss'
 import Chart from './Chart'

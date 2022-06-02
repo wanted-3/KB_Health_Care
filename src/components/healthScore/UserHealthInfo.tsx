@@ -1,11 +1,9 @@
-import { useRef } from 'react'
-
-import { getUserInfo } from 'states/userInfo'
 import { useAppSelector } from 'hooks/useAppSelector'
+import { getUserInfo } from 'states/userInfo'
 
 import styles from './userHealthInfo.module.scss'
-import { InfoIcon, TopArrow } from 'assets/svgs'
 import CircleChart from './CircleChart'
+import { InfoIcon } from 'assets/svgs'
 
 const formatDate = (date: string) => {
   const formatted = date.split('')
@@ -18,18 +16,10 @@ const formatDate = (date: string) => {
 const UserHealthInfo = () => {
   const userInformation = useAppSelector(getUserInfo)
 
-  const scrollRef = useRef<HTMLDivElement>(null)
-
   const userSex = userInformation.sex === '1' ? '남성' : '여성'
 
-  const handleScrollToTop = () => {
-    scrollRef.current?.scrollIntoView()
-  }
-
   return (
-    <div className={styles.userHealthInfoWrapper} ref={scrollRef}>
-      <h1 className={styles.title}>마이헬스</h1>
-
+    <div className={styles.userHealthInfoWrapper}>
       <div className={styles.healthScoreWrap}>
         <div className={styles.healthScoreTitle}>
           <h1>김헬스님의 건강점수</h1>
@@ -54,10 +44,6 @@ const UserHealthInfo = () => {
             <dd>{userInformation.resHeight}cm</dd>
           </div>
         </dl>
-
-        <button className={styles.toTopBtn} onClick={handleScrollToTop} type='button'>
-          <TopArrow />
-        </button>
       </div>
     </div>
   )

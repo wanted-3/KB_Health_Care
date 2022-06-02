@@ -1,11 +1,10 @@
+import { getHealthPoint } from 'states/healthScoreData'
 import { useAppSelector } from 'hooks/useAppSelector'
 import { getUserInfo } from 'states/userInfo'
-
 import { IResults } from 'types/chartData'
 
 import styles from './chart.module.scss'
 import Chart from './Chart'
-import { getHealthPoint } from 'states/healthScoreData'
 
 const HealthPoint = () => {
   const compareScore = useAppSelector(getHealthPoint)

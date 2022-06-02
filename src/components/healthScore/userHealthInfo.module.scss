@@ -1,14 +1,7 @@
-@use '/src/styles/constants/colors';
+@use 'styles/constants/colors';
 
 .userHealthInfoWrapper {
   background-color: colors.$MAIN;
-
-  .title {
-    padding: 30px;
-    font-size: 18px;
-    font-weight: 700;
-    color: colors.$GRAY3;
-  }
 
   .healthScoreWrap {
     display: flex;
@@ -85,16 +78,5 @@
         font-size: 14px;
       }
     }
-  }
-
-  .toTopBtn {
-    position: absolute;
-    bottom: 40px;
-    z-index: 1;
-    width: 40px;
-    height: 40px;
-    margin-left: 280px;
-    background-color: colors.$GRAYE;
-    border-radius: 50%;
   }
 }

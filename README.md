@@ -3,7 +3,7 @@
 
 # 🚀 배포
 
-<!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/8c963488-351b-41d4-9152-60535ac564b2/deploy-status)](https://moadata.netlify.app/) -->
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8c963488-351b-41d4-9152-60535ac564b2/deploy-status)](https://main--kbhealth.netlify.app/)
 
 
 # 🗣 팀 구성(8명)
@@ -28,32 +28,27 @@ __김소형, 이주형, 이종길, 제준영, 도진경, 이서현, 홍원배, �
 - Victory
 - react-minimal-pie-chart
 - Axios
-- Dayjs
 - SCSS
 
 ## 폴더 구조
 
+
 ```sh
-src
-│
-├─ data  # 초기 JSON 데이타 파일이 있는 폴더
-├─ assets
-│      └─svgs  # 회원 및 상세 차트(search, userDetail)
-├─ hooks # redux dispatch, selector와 axios를 위한 hook
-├─ components  # 컴포넌트를 모아놓은 폴더
-│     ├─ graph  # 각 컴포넌트별 그래프 모아놓은 폴더 
-│     ├─ health  # 사용자에 대한 데이터를 사용한 폴더   
-│     ├─ home  # 홈화면 폴더
-│     └─ layout  # 레이아웃 폴더
-├─ routes # 페이지별로 렌더링 화면을 보는 폴더
-│     ├─ Home  # 홈 화면 컴포넌트
-│     ├─ Health # 사용자 데이터 뿌려주는 컴포넌트
-│     └─ Graph # 그래프 컴포넌트
-├─ services # 데이터 불러오는 컴포넌트
-├─ states  # 상태관리 리덕스 설정을 위한 slice, store, ts 등의 파일이 있는 폴더
-├─ styles  # CSS 스타일을 위한 폴더
-├─ types  # Typescript 정의 파일
-└─ utils  # data format 해주는 유틸 파일이 있는 폴더
+📦src
+ ┣ 📂assets
+ ┃ ┗ 📂svgs # SVG 아이콘 모아놓은 폴더
+ ┣ 📂components # 컴포넌트를 모아놓은 폴더
+ ┃ ┣ 📂healthCare # 맞춤 건강관리 폴더
+ ┃ ┣ 📂healthScore # 건강 점수 폴더
+ ┃ ┣ 📂healthScoreChart # 건강정보 차트 폴더
+ ┃ ┗ 📂layout # 레이아웃 폴더
+ ┣ 📂hooks # redux dispatch, selector와 axios를 위한 hook
+ ┣ 📂routes # 페이지별로 렌더링 화면을 보는 폴더
+ ┣ 📂services  # 데이터 불러오는 컴포넌트
+ ┣ 📂states # 상태관리 리덕스 설정을 위한 slice, store, ts 등의 파일이 있는 폴더
+ ┣ 📂styles # CSS 스타일을 위한 폴더
+ ┣ 📂types # Typescript 정의 파일
+ ┗ 📂utils # data format 해주는 유틸 파일이 있는 폴더
 
 ```
 
@@ -96,11 +91,12 @@ Victoryjs 라이브러리를 활용하여 구현하였고
 
 |홈화면|건강관리그래프|
 |:---:|:---:|
-|<img src="https://user-images.githubusercontent.com/63532503/171318084-04b2c5cd-9873-4ad0-847f-3257f69e6e81.gif" width="350"/>|<img src="https://user-images.githubusercontent.com/63532503/171318274-88ae890e-e991-4fee-9451-6a4f752ebe9c.gif" width="350"/>|
+|<img src="https://user-images.githubusercontent.com/91236732/171620438-6f2a7265-e846-4fbe-9bbe-31e2edfb5d84.png" width="350"/>|<img src="https://user-images.githubusercontent.com/91236732/171620446-d291c993-eed5-4314-ac24-4322c39ff7e9.png" width="350"/>|
 
-|맞춤건강관리| |
+|맞춤건강관리| 화면구성|
 |:---:|:---:|
-<img src="https://user-images.githubusercontent.com/63532503/171318347-f9982117-09e1-434e-88d8-41b7540555df.gif" width="350"/>| |
+<img src="https://user-images.githubusercontent.com/91236732/171620448-7e1d9833-68a1-4523-b0f0-344433bb1a02.png" width="350"/>|<img src="https://user-images.githubusercontent.com/91236732/171621840-9b7c3616-1600-4733-956c-520fbf49fee2.gif" width="350"/>|
+
 
 #  ✏️ 어려웠던 점
 

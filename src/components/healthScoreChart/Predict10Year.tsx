@@ -1,9 +1,9 @@
-import { useAppSelector } from 'hooks/useAppSelector'
 import { getPredictPoint } from 'states/healthScoreData'
+import { useAppSelector } from 'hooks/useAppSelector'
+import { IResults } from 'types/chartData.d'
 
 import styles from './chart.module.scss'
 import Chart from './Chart'
-import { IResults } from 'types/chartData.d'
 
 const Predict10Year = () => {
   const compareScore = useAppSelector(getPredictPoint)

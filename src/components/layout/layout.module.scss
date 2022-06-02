@@ -1,7 +1,8 @@
-@use '/src/styles/constants/colors';
+@use 'styles/constants/colors';
 
 .layout {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -9,9 +10,29 @@
 
   .main {
     width: 360px;
-    height: 690px;
+    height: 90vh;
+    max-height: 690px;
     overflow: scroll;
     background-color: white;
     border-radius: 30px;
+
+    .title {
+      padding: 30px;
+      font-size: 18px;
+      font-weight: 700;
+      color: colors.$GRAY3;
+      background-color: colors.$MAIN;
+    }
+  }
+
+  .toTopBtn {
+    position: absolute;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    margin-top: 550px;
+    margin-left: 280px;
+    background-color: colors.$GRAYE;
+    border-radius: 50%;
   }
 }

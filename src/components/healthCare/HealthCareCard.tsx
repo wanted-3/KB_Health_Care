@@ -31,7 +31,15 @@ const HealthCareCard = ({
       <span className={styles.number}>0{id}</span>
       <h1 className={cx(styles.title, styles[COLOR_ID])}>{name}</h1>
 
-      <p className={styles.intro}>{value ? `${firstText} ${value}${unit} 로 ${title} 입니다.` : text}</p>
+      <p className={styles.intro}>
+        {value ? (
+          <>
+            {firstText} {value} {unit} 로 <strong>{title}</strong> 입니다.
+          </>
+        ) : (
+          text
+        )}
+      </p>
 
       <p className={styles.coverage}>{coverage}</p>
 
@@ -48,7 +56,7 @@ const HealthCareCard = ({
       <h2 className={cx(styles.subTitle, styles[COLOR_ID])}>이렇게 관리해 보세요!</h2>
       <ul className={styles.textLists}>
         {textList.map((item) => (
-          <li className={styles.textLi} key={`${item}-temp`}>
+          <li className={styles.textLi} key={`${item}-textKey`}>
             {item}
           </li>
         ))}
