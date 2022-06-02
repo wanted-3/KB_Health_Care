@@ -1,9 +1,9 @@
 import { useAppSelector } from 'hooks/useAppSelector'
 import { getYearPoint } from 'states/healthScoreData'
+import { IResults } from 'types/chartData'
 
 import styles from './chart.module.scss'
 import Chart from './Chart'
-import { IResults } from 'types/chartData'
 
 const YearHealth = () => {
   const compareScore = useAppSelector(getYearPoint)

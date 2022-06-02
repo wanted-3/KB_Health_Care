@@ -38,7 +38,6 @@
     "react-error-boundary": "^3.1.4",
     "react-minimal-pie-chart": "^8.3.0",
     "react-redux": "^8.0.1",
-    "react-router-dom": "6",
     "react-scripts": "5.0.1",
     "react-use": "^17.3.2",
     "victory": "^36.4.1",

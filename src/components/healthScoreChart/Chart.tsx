@@ -43,7 +43,7 @@ const Chart = ({ chartData }: ChartProps) => {
           />
         }
         data={chartData}
-        labels={({ datum }) => String(datum.y)}
+        labels={({ datum }) => datum.y.toLocaleString()}
       />
       <VictoryGroup data={chartData} color='#BFBFBF'>
         <VictoryLine
