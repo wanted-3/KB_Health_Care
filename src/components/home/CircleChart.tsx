@@ -22,7 +22,7 @@ const CircleChart = ({ score }: Props) => {
       animate
       animationDuration={2000}
       rounded
-      label={({ dataEntry }: any) => dataEntry.value}
+      label={({ dataEntry }) => dataEntry.value}
       labelStyle={{
         fontSize: '26px',
         fontWeight: '500',
