@@ -1,10 +1,10 @@
 @use '/src/styles/constants/colors';
 
-.homeWrapper {
+.userHealthInfoWrapper {
   background-color: colors.$MAIN;
 
-  .homeTitle {
-    padding: 20px;
+  .title {
+    padding: 30px;
     font-size: 18px;
     font-weight: 700;
     color: colors.$GRAY3;
@@ -89,7 +89,7 @@
 
   .toTopBtn {
     position: absolute;
-    bottom: 120px;
+    bottom: 40px;
     z-index: 1;
     width: 40px;
     height: 40px;

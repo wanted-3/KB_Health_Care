@@ -1,51 +1,49 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { IHealthScoreList } from 'types/dummyData.d'
+import { IHealthScoreList } from 'types/healthData.d'
 
 import type { RootState } from '.'
 
-export interface DateState {
+export interface IHealthScoreState {
   healthPoint: {
-    hscore_peer: number | null
-    wHscore: number | null
-    hscorePercent: number | null
+    hscore_peer: number
+    wHscore: number
+    hscorePercent: number
   }
   yearPoint: {
-    healthScoreList: IHealthScoreList[] | null
-    paramMap: string | null
+    healthScoreList: IHealthScoreList[]
   }
   predictPoint: {
-    wHscore: string
+    wHscore: number
     wHscoreDy: string
   }
   price: {
-    medi: string
+    medi: number
     mediDy: string
   }
 }
 
-const INITIAL_STATE: DateState = {
+const INITIAL_STATE = {
   healthPoint: {
-    hscore_peer: null,
-    wHscore: null,
-    hscorePercent: null,
+    hscore_peer: 0,
+    wHscore: 0,
+    hscorePercent: 0,
   },
   yearPoint: {
-    healthScoreList: null,
-    paramMap: null,
+    healthScoreList: [],
   },
   predictPoint: {
-    wHscore: '',
+    wHscore: 0,
     wHscoreDy: '',
   },
   price: {
-    medi: '',
+    medi: 0,
     mediDy: '',
   },
 }
 
 const systemSlice = createSlice({
-  name: 'graphData',
-  initialState: INITIAL_STATE,
+  name: 'healthScoreData',
+  initialState: INITIAL_STATE as IHealthScoreState,
   reducers: {
     setHealthPoint: (state, action) => {
       state.healthPoint = action.payload
@@ -66,7 +64,7 @@ export const { setHealthPoint, setPredictPoint, setPrice, setYearPoint } = syste
 
 export default systemSlice.reducer
 
-export const getHealthPoint = (state: RootState) => state.graph.healthPoint
-export const getYearPoint = (state: RootState) => state.graph.yearPoint
-export const getPredictPoint = (state: RootState) => state.graph.predictPoint
-export const getPrice = (state: RootState) => state.graph.price
+export const getHealthPoint = (state: RootState) => state.healthScoreData.healthPoint
+export const getYearPoint = (state: RootState) => state.healthScoreData.yearPoint
+export const getPredictPoint = (state: RootState) => state.healthScoreData.predictPoint
+export const getPrice = (state: RootState) => state.healthScoreData.price

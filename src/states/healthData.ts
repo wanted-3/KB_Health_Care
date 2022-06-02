@@ -1,4 +1,4 @@
-import { createSlice, current } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import type { RootState } from '.'
 
 interface ITag {
@@ -8,7 +8,7 @@ interface ITag {
   tag3: string
 }
 
-interface IHeathData {
+export interface IHealthData {
   name: string
   firstText?: string
   text?: string
@@ -22,9 +22,9 @@ interface IHeathData {
 
 interface HealthState {
   value: {
-    [key: string]: IHeathData
+    [key: string]: IHealthData
   }
-  test: {
+  score: {
     wMymaxHscore: number
   }
 }
@@ -86,12 +86,12 @@ const INITIAL_STATE = {
     },
   },
 
-  test: {
+  score: {
     wMymaxHscore: 0,
   },
 }
 
-const ttt = [
+const CARE_GROUP_NAME = [
   'resBMI',
   'resBloodPressure',
   'resTotalCholesterol',
@@ -106,15 +106,15 @@ const systemSlice = createSlice({
   name: 'healthData',
   initialState: INITIAL_STATE as HealthState,
   reducers: {
-    temp: (state, action) => {
-      state.test.wMymaxHscore = action.payload.wxcResultMap.wMymaxHscore
+    setHealthData: (state, action) => {
+      state.score.wMymaxHscore = action.payload.wxcResultMap.wMymaxHscore
 
-      const tagGroup = action.payload.healthTagList.filter((item: ITag) => ttt.includes(item.tagId))
+      const tagGroup = action.payload.healthTagList.filter((item: ITag) => CARE_GROUP_NAME.includes(item.tagId))
 
       tagGroup.forEach((item: ITag) => {
         const arr1 = Object.values(item)
           .slice(1)
-          .filter((test: string) => test !== '')
+          .filter((tagName: string) => tagName !== '')
 
         state.value[item.tagId].tags = arr1
       })
@@ -155,9 +155,9 @@ const systemSlice = createSlice({
   },
 })
 
-export const { temp } = systemSlice.actions
+export const { setHealthData } = systemSlice.actions
 
 export default systemSlice.reducer
 
 export const getHealthData = (state: RootState) => state.healthData.value
-export const getTestData = (state: RootState) => state.healthData.test
+export const getHealthScore = (state: RootState) => state.healthData.score

@@ -13,7 +13,7 @@ export interface IUserInfo {
   }
 }
 
-const INITIAL_STATE: IUserInfo = {
+const INITIAL_STATE = {
   userInfo: {
     healthScript: '',
     healthScore: '0',
@@ -26,7 +26,7 @@ const INITIAL_STATE: IUserInfo = {
 
 const userSlice = createSlice({
   name: 'userInfo',
-  initialState: INITIAL_STATE,
+  initialState: INITIAL_STATE as IUserInfo,
   reducers: {
     setUserInfo: (state, action) => {
       state.userInfo = action.payload
@@ -38,4 +38,4 @@ export const { setUserInfo } = userSlice.actions
 
 export default userSlice.reducer
 
-export const userInformation = (state: RootState) => state.userInfo.userInfo
+export const getUserInfo = (state: RootState) => state.userInfo.userInfo

@@ -1,4 +1,3 @@
-import { IDataChart } from 'types/chartData'
 import {
   VictoryChart,
   VictoryLine,
@@ -11,12 +10,13 @@ import {
   VictoryLabel,
 } from 'victory'
 
+import { IDataChart } from 'types/chartData'
+
 interface ChartProps {
   chartData: IDataChart[]
 }
-const Chart = ({ chartData }: ChartProps) => {
-  const colors = ['#FFC000', '#BFBFBF']
 
+const Chart = ({ chartData }: ChartProps) => {
   return (
     <VictoryChart theme={VictoryTheme.material} width={650} height={320} domainPadding={{ x: 150 }}>
       <VictoryAxis
@@ -31,7 +31,6 @@ const Chart = ({ chartData }: ChartProps) => {
       />
 
       <VictoryBar
-        scale={{ x: 'time', y: 'linear' }}
         standalone={false}
         style={{
           data: { fill: ({ datum }) => (datum.x === '나' || datum.x === '2021' ? '#FFC000' : '#fe833d') },
@@ -44,9 +43,9 @@ const Chart = ({ chartData }: ChartProps) => {
           />
         }
         data={chartData}
-        animate={{ duration: 5000, onLoad: { duration: 500 } }}
+        labels={({ datum }) => String(datum.y)}
       />
-      <VictoryGroup data={chartData} color={colors[1]}>
+      <VictoryGroup data={chartData} color='#BFBFBF'>
         <VictoryLine
           standalone={false}
           style={{
@@ -57,7 +56,6 @@ const Chart = ({ chartData }: ChartProps) => {
             },
           }}
           labelComponent={<VictoryTooltip renderInPortal={false} />}
-          animate={{ duration: 3000, onLoad: { duration: 500 } }}
         />
         <VictoryScatter
           size={3}

@@ -1,21 +1,16 @@
-import styles from './testComponent.module.scss'
+import { ReactElement } from 'react'
 import { cx } from 'styles'
 
-interface TestComponentProps {
-  id: any
-  icon: any
-  name: any
-  value?: any
-  coverage?: any
-  firstText?: any
-  text?: any
-  unit?: any
-  title: any
-  tags: any
-  textList: any
+import { IHealthData } from 'states/healthData'
+
+import styles from './healthCareCard.module.scss'
+
+interface HealthCareCardProps extends IHealthData {
+  id: number
+  icon: ReactElement<any, any>
 }
 
-const TestComponent = ({
+const HealthCareCard = ({
   id,
   icon,
   title,
@@ -27,21 +22,21 @@ const TestComponent = ({
   coverage,
   tags,
   textList,
-}: TestComponentProps) => {
-  const strId = `list${id}`
+}: HealthCareCardProps) => {
+  const COLOR_ID = `list${id}`
 
   return (
-    <div className={styles.tempWrapper}>
+    <div className={styles.wrapper}>
       {icon}
       <span className={styles.number}>0{id}</span>
-      <h1 className={cx(styles.title, styles[strId])}>{name}</h1>
+      <h1 className={cx(styles.title, styles[COLOR_ID])}>{name}</h1>
 
       <p className={styles.intro}>{value ? `${firstText} ${value}${unit} 로 ${title} 입니다.` : text}</p>
 
       <p className={styles.coverage}>{coverage}</p>
 
       <ul className={styles.tags}>
-        {tags.map((item: any) => (
+        {tags.map((item) => (
           <li key={item} className={styles.tag}>
             #{item}
           </li>
@@ -50,9 +45,9 @@ const TestComponent = ({
 
       <hr className={styles.line} />
 
-      <h2 className={cx(styles.subTitle, styles[strId])}>이렇게 관리해 보세요!</h2>
+      <h2 className={cx(styles.subTitle, styles[COLOR_ID])}>이렇게 관리해 보세요!</h2>
       <ul className={styles.textLists}>
-        {textList.map((item: string) => (
+        {textList.map((item) => (
           <li className={styles.textLi} key={`${item}-temp`}>
             {item}
           </li>
@@ -62,4 +57,4 @@ const TestComponent = ({
   )
 }
 
-export default TestComponent
+export default HealthCareCard

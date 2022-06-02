@@ -1,0 +1,20 @@
+@use '/src/styles/constants/colors';
+
+.healthWrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px 0;
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 25px;
+    color: colors.$GRAY3;
+
+    & mark {
+      background: linear-gradient(to top, colors.$MAIN 50%, transparent 50%);
+    }
+  }
+}
